@@ -72,6 +72,9 @@ gallery.addEventListener('click', (event) => {
       event.preventDefault();
       const originalSource = event.target.dataset.source;
       console.log(originalSource);
+            
+      const lightbox = basicLightbox.create(`<img src='${originalSource}' alt='Image'>`);
+      lightbox.show();
     }
 });
 
@@ -79,4 +82,5 @@ gallery.addEventListener('click', (event) => {
 const markup = images
   .map((img) => `<li class="gallery-item"><a class="gallery-link" href=${img.original}><img class="gallery-image" src=${img.preview} data-source=${img.original} alt=${img.description} /></a></li>`)
   .join('');
-gallery.insertAdjacentHTML("afterbegin", markup);
+gallery.insertAdjacentHTML('afterbegin', markup);
+
