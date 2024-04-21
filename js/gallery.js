@@ -65,7 +65,6 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-// const links = document.querySelectorAll('.gallery-link');
 
 gallery.addEventListener('click', (event) => {
     if (event.target.classList.contains('gallery-image')) {
@@ -73,8 +72,8 @@ gallery.addEventListener('click', (event) => {
       const originalSource = event.target.dataset.source;
       console.log(originalSource);
             
-      const lightbox = basicLightbox.create(`<img src='${originalSource}' alt='Image'>`);
-      lightbox.show();
+      const lightbox = basicLightbox.create(`<img src='${originalSource}' alt='${event.target.alt}'>`);
+      lightbox.show();      
     }
 });
 
